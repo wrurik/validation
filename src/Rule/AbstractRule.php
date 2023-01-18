@@ -276,9 +276,9 @@ abstract class AbstractRule
         }
 
         // lines[*][quantity] is converted to ['lines', '*', 'quantity']
-        $relatedItemParts = explode('[', str_replace(']', '', $relatedItem));
+        $relatedItemParts = explode('[', str_replace(']', '[', $relatedItem));
         // lines[5][price] is ['lines', '5', 'price']
-        $valueIdentifierParts = explode('[', str_replace(']', '', $valueIdentifier));
+        $valueIdentifierParts = explode('[', str_replace(']', '[', $valueIdentifier));
 
         if (count($relatedItemParts) !== count($valueIdentifierParts)) {
             return $relatedItem;
